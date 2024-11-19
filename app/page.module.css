@@ -1,0 +1,582 @@
+/*Hero and header*/
+.hero{
+	background-image:url(/move.gif);
+	background-position-y:top;
+	background-position-x:center;
+	background-size:cover;
+	background-color:var(--background);
+	text-align:center;
+	align-content: center;
+	color:var(--text);
+	margin-top: 2rem;
+	height: 630px;
+}
+
+.hero h1 {
+    font-size: 3rem; 
+    font-weight: 700; 
+    line-height: 1.3; 
+    margin-bottom: 1rem; 
+    
+}
+
+.hero p {
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    line-height: 1.5; 
+    margin-top: 1rem; 
+    
+}
+
+/*Main or all page css*/
+.main,.pageMain{
+	/* background-color:var(--background); */
+	color:var(--text);
+	padding:1rem 1rem;
+	border-radius:30px;
+}
+
+.reverse{
+	display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+	margin-bottom: 30px;
+}
+.pageMain{margin-top:3.9rem;    margin-bottom: 5rem;}
+.counter,.grid{
+	display:flex;
+	gap:30px;
+	flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+	margin:3rem 0rem;
+}
+.padding{
+	padding:0.5rem 10rem;
+}
+.input{
+	padding:0.3rem 1rem;
+	outline:none;
+	background:none;
+	color:#fff;
+	border-radius:5px;
+	border:1px solid #96989a;
+}
+.image{width:40%;}
+.muted{
+	color:var(--primary-muted);
+	font-weight: 500;
+}
+.darkmuted{
+	color:var(--text-muted);
+	font-weight:500;
+}
+.count span{font-size:25px;}
+.count{
+	display: flex;
+	text-align:center;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    box-shadow:var(--box-shadow);
+	border-radius:20px;
+}
+
+/* Services Section */
+.servicesSection {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.servicesCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.servicesCard:hover {
+    transform: translateY(-10px);
+}
+
+/* Image Container */
+.cardImageContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.cardImageContainer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease;
+}
+
+/* Overlay */
+.cardOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.cardOverlay h4 {
+    font-size: 1.5rem;
+    /* margin-bottom: 0.5rem; */
+}
+
+.cardOverlay p {
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.servicesCard:hover img {
+    filter: blur(5px);
+}
+
+.servicesCard:hover .cardOverlay {
+    opacity: 1;
+}
+
+/*all cards*/
+
+.card{
+	display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+	/* padding:0.7rem 1rem; */
+	border-radius:20px;
+	width:250px;
+	box-shadow:var(--box-shadow);
+}
+.card:hover,.team:hover,.small:hover,.feature:hover{
+	transform:scale(1.1);
+	transition:transform 0.5s;
+}
+.button{
+	background:none;
+	color:var(--text-white);
+	text-decoration: none;
+	background-color: var(--primary);
+	border: none;
+	padding:0.5rem rem;
+	border-radius:10px;
+	font-weight:600;
+	text-align:center;
+}
+.team{
+	display:block;
+	width:250px;
+	box-shadow:var(--box-shadow);
+}
+#teamShape{
+	position:relative;
+	top:-40px;
+	height:55.8px;
+}
+
+/* Flip Card Container */
+.flipCard {
+	perspective: 1000px;
+	position: relative;
+	width: 300px;
+	height: 400px;
+	margin: 20px;
+  }
+  
+  .cardFace {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	border-radius: 20px;
+	box-shadow: var(--box-shadow);
+	transition: transform 0.6s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+  }
+  
+  .front {
+	background-color: var(--background);
+  }
+  
+  .back {
+	background-color: var(--primary);
+	color: var(--text-white);
+	transform: rotateY(180deg);
+	text-align: center;
+  }
+  
+  .flipCard:hover .front {
+	transform: rotateY(180deg);
+  }
+  
+  .flipCard:hover .back {
+	transform: rotateY(360deg);
+  }
+  
+  /* Price Grid */
+  .priceGrid {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  
+  .card {
+	padding: rem;
+	border-radius: 20px;
+	box-shadow: var(--box-shadow);
+  }
+  
+  .price {
+	font-size: 1.5rem;
+	margin: 1rem 0;
+  }
+  
+  .line {
+	color: #ff0000;
+	text-decoration: line-through;
+  }
+
+  /* Button */
+.button {
+	margin-top: 2rem;
+	background:  #172eff;
+	color: #ffffff;
+	border: none;
+	padding: 0.5rem 1.5rem;
+	border-radius: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+	background: #1526c2;
+  }
+
+  .cta-button {
+	background: linear-gradient(135deg, #00c6ff, #0072ff);
+	color: #fff;
+	border: none;
+	padding: 12px 24px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+	background: linear-gradient(135deg, #0072ff, #00c6ff);
+  }
+  
+/*end of all card*/
+
+
+.full{width:100%;}
+.half{width:40%;}
+.small{width:20%;}
+
+.services,.prices,.center,.subscribe {
+	text-align:center;
+	justify-content: center;
+}
+
+.subscribe{
+	background-color:var(--background);
+	color: var(--text);
+	width:100%;
+	padding:3rem 0rem;
+	z-index:0;
+	border-radius:20px;
+	position:relative;
+	top:-50px;
+}
+
+.faq{
+	width:400px;
+	padding:1rem 1rem;
+	text-align:left;
+	border-radius:20px;
+	border:1px solid #00000050;
+	transition: 2s;
+	margin:10px 0px;
+}
+.accordion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+	gap:10px;
+	transition: 2s;
+}
+
+#btn{
+	width:450px;
+	display:flex;
+	justify-content:space-evenly;
+	align-items: center;
+	z-index:0;
+}
+
+
+.logos{
+	display: flex;
+    gap: 50px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex{
+	padding:20px 20px;
+	display:flex;
+	gap:10px;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+/*features*/
+.features{
+	display:grid;
+	gap:50px;
+	grid-template-columns:1fr 1fr;
+}
+.feature{
+	display:flex;
+	background-color:var(--background);
+	font-weight: 500;
+	align-items:center;
+	padding:0.5rem 1rem;
+	gap:10px;
+	box-shadow:var(--box-shadow);
+}
+.features i{
+	padding:0rem 0.7rem;
+	font-size:20px;
+}
+.features li:hover i{
+	background-color:lightblue;
+}
+
+/*slider */
+.slider{
+	display: flex;
+	column-gap: 200px;
+	animation: r var(--d) linear infinite;
+}
+
+
+@keyframes r {
+	0%{transform: translateX(10%);}
+	99%{transform: translateX(-120%);}
+	99.001%{transform: translateX(10%);}
+}
+
+/*end of features*/
+
+/*xxxxxxxxxxxxxxxxxxCONTACTxxxxxxxxxxxxxxxx*/
+
+.textFlex{
+	display:flex;
+	gap:20px;
+}
+
+.block{
+	display:block;
+	gap:10px;
+}
+
+.widthabout{
+  width:450px;
+}
+
+/* for Apply job */
+
+/* Career Section */
+.inputGroup {
+	margin-bottom: 1rem;
+	text-align: left;
+  }
+  
+  .label {
+	font-size: 1rem;
+	color: var(--text-muted);
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+  }
+  
+  .formControl {
+	padding: 0.8rem;
+	font-size: 1rem;
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	background: #f9f9f9;
+	margin-top: 0.5rem;
+  }
+  
+  .formControl:focus {
+	border-color: var(--primary);
+	outline: none;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .button {
+	background: var(--primary);
+	color: var(--text-white);
+	border: none;
+	padding: 0.8rem 2rem;
+	border-radius: 10px;
+	font-weight: 600;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background 0.3s ease;
+	margin-top: 1rem; /* Added spacing above the button */
+  }
+  
+  .button:hover {
+	background: var(--primary-dark);
+  }
+  /* Modal Styles */
+  .modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal {
+	background: var(--background);
+	padding: 2rem; /* Adjusted padding for better spacing */
+	border-radius: 20px;
+	box-shadow: var(--box-shadow);
+	width: 500px;
+	height: 600px; /* Fixed height for the modal */
+	max-height: 90vh; /* Prevents overflow beyond viewport */
+	text-align: center;
+	position: relative;
+	overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
+  }
+  
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.closeButton:hover {
+  color: var(--primary);
+}
+
+  
+  /* Job Cards */
+  .jobCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	border-radius: 20px;
+	width: 300px;
+	margin: 0 15px;
+	box-shadow: var(--box-shadow);
+	background-color: var(--background);
+	text-align: center;
+	transition: transform 0.3s ease;
+  }
+  
+  .jobCard:hover {
+	transform: scale(1.05);
+  }
+  
+  .jobCard h3 {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  .jobCard p {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+  }
+  
+  .jobCard button {
+	margin-top: 1rem;
+	background: linear-gradient(135deg, #00c6ff, #0072ff);
+	color: #ffffff;
+	border: none;
+	padding: 0.5rem 1.5rem;
+	border-radius: 10px;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.3s ease;
+  }
+  
+  .jobCard button:hover {
+	background: linear-gradient(135deg, #0072ff, #00c6ff);
+  }
+  
+	
+/*career section*/
+@media(max-width:700px){
+	.main,.about,.reverse{
+		padding:0.2rem 0.2rem;
+		text-align:center;
+	}
+	#btn{width:250px;}
+  .widthabout{width:350px;}
+  .faq{width:350px}
+	.hero{padding:10rem 2rem;}
+	.image,.small,.half,.full{width:90%;}
+	.grid{padding:0rem 1rem;}
+	.features{grid-template-columns:1fr;gap:25px;}
+	.flex{flex-wrap: wrap}
+	.slider{column-gap: 100px;}
+}
