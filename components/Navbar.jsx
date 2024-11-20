@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import style from "../styles/Navbar.module.css";
 import Link from "next/link";
@@ -66,9 +67,13 @@ const Navbar = () => {
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg w-100 navbar-light bg-light" id={style.main}>
         <div className="container-fluid gap-3">
-          <Link className="navbar-brand d-flex gap-2 align-items-center" href="/">
-            <Image src="/logo.png" width={150} height={40} alt="logo" />
-          </Link>
+        <Link className="navbar-brand d-flex gap-2 align-items-center" href="/">
+             <Image src="/logo.jpg" width={40} height={40} alt="logo" />
+             <span className={style.logoText}>
+               <span className={style.mainLogo}>CYBEXONICS</span>
+               <span className={style.subLogo}>IT CONSULTANT</span>
+             </span>
+           </Link>
           <button
             className="navbar-toggler"
             type="button"
