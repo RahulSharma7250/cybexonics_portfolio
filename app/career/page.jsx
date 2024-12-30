@@ -5,9 +5,39 @@ import Main from "@/components/Main";
 
 function Career() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setSubmissionStatus(true);
+        setIsModalOpen(false);
+        e.target.reset();
+      } else {
+        console.error("Failed to submit the form.");
+        alert("There was an issue submitting your application. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("An error occurred while submitting the form. Please try again later.");
+    }
+  };
+
+  const closeSuccessMessage = () => {
+    setSubmissionStatus(false);
   };
 
   return (
@@ -50,18 +80,21 @@ function Career() {
               <h3 className={style.muted}>
                 Please fill out the form below to submit your job application.
               </h3>
-              <form
-                action="https://formsubmit.co/d2d876f5c78dbd4c64e83ecdf8dc364f"
-                method="POST"
-                encType="multipart/form-data"
-              >
+              <form onSubmit={handleFormSubmit}>
+                {/* Web3Forms Access Key */}
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="79a0e1f8-5b01-476c-9fef-5d4aa32f43f7"
+                />
+
                 <div className={style.inputGroup}>
                   <label htmlFor="name" className={style.label}>
                     Enter your name
                   </label>
                   <input
                     type="text"
-                    name="Name"
+                    name="name"
                     id="name"
                     className={style.formControl}
                     placeholder="Full Name"
@@ -75,7 +108,7 @@ function Career() {
                   </label>
                   <input
                     type="email"
-                    name="Email"
+                    name="email"
                     id="email"
                     className={style.formControl}
                     placeholder="Email"
@@ -89,24 +122,10 @@ function Career() {
                   </label>
                   <input
                     type="number"
-                    name="ContactNo"
+                    name="contact_no"
                     id="contact"
                     className={style.formControl}
                     placeholder="Contact/Phone No"
-                  />
-                </div>
-
-                <div className={style.inputGroup}>
-                  <label htmlFor="resume" className={style.label}>
-                    Upload your resume
-                  </label>
-                  <input
-                    type="file"
-                    name="Resume"
-                    id="resume"
-                    className={style.formControl}
-                    accept="application/pdf"
-                    required
                   />
                 </div>
 
@@ -116,7 +135,7 @@ function Career() {
                   </label>
                   <textarea
                     className={style.formControl}
-                    name="Message"
+                    name="message"
                     id="message"
                     cols={6}
                     rows={3}
@@ -129,6 +148,19 @@ function Career() {
                   Submit
                 </button>
               </form>
+            </div>
+          </div>
+        )}
+
+        {/* Success Message Overlay */}
+        {submissionStatus && (
+          <div className={style.successOverlay}>
+            <div className={style.successMessage}>
+              <h2>🎉 Success!</h2>
+              <p>Your application has been submitted successfully.</p>
+              <button className={style.button} onClick={closeSuccessMessage}>
+                Close
+              </button>
             </div>
           </div>
         )}

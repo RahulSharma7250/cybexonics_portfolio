@@ -23,10 +23,22 @@ const Footer = () => {
 				<div className={style.top}>
 					<h4 data-aos="fade-right">Cybexonics ITConsultants Pvt. Ltd</h4>
 					<div className={style.icons}>
-						<Link href="https://www.instagram.com/cybexonics.it_consultants?igsh=bnVuZ2treTAxNzRy" className={style.link}><FaInstagram size="1.5rem" data-aos="fade-up" /></Link>
-						<Link href="/" className={style.link}><FaWhatsapp size="1.5rem" data-aos="fade-up" /></Link>
-						<Link href="/" className={style.link}><FaGithub size="1.5rem" data-aos="fade-up" /></Link>
-					</div>
+                        <Link href="https://www.instagram.com/cybexonics.it_consultants?igsh=bnVuZ2treTAxNzRy" className={style.link}>
+                          <FaInstagram size="1.5rem" data-aos="fade-up" />
+                        </Link>
+                        <Link 
+                          href="https://wa.me/917387643893?text=I%20want%20build%20a%20website." 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className={style.link}
+                        >
+                          <FaWhatsapp size="1.5rem" data-aos="fade-up" />
+                        </Link>
+                        <Link href="/" className={style.link}>
+                          <FaGithub size="1.5rem" data-aos="fade-up" />
+                        </Link>
+                      </div>
+					  
 				</div>
 				<div className={style.body}>
 					<div className={style.box} data-aos="fade-up">

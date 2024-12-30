@@ -23,7 +23,7 @@ export function About() {
                 <span className={style.muted}>WHO WE ARE</span>
                 <h2>About Us</h2>
                 <p className={`${style.widthabout} ${style.centerText}`}>
-                    Welcome to CYBEXONICS IT CONSULTANTS! We are a dynamic web development company dedicated to delivering fast, innovative, and creative solutions tailored to your needs. Our team of experienced professionals leverages the latest technologies and trends to create stunning websites that not only look great but also perform exceptionally. Whether you need a simple website or a complex application, we work efficiently to ensure timely delivery without compromising on quality. Let us help you bring your vision to life with our unique blend of speed and creativity!
+                    Welcome to CYBEXONICS IT CONSULTANTS! We are a Baramati's-best web development company, dedicated to delivering fast, innovative, and creative solutions tailored to your needs. Our team of experienced professionals leverages the latest technologies and trends to create stunning websites that not only look great but also perform exceptionally. Whether you need a simple website or a complex application, we work efficiently to ensure timely delivery without compromising on quality. Let us help you bring your vision to life with our unique blend of speed and creativity!
                 </p>
             </div>
             <Image

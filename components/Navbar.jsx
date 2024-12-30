@@ -68,7 +68,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg w-100 navbar-light bg-light" id={style.main}>
         <div className="container-fluid gap-3">
         <Link className="navbar-brand d-flex gap-2 align-items-center" href="/">
-             <Image src="/logo.jpg" width={40} height={40} alt="logo" />
+             <Image src="/logo2.png" width={40} height={40} alt="logo" />
              <span className={style.logoText}>
                <span className={style.mainLogo}>CYBEXONICS</span>
                <span className={style.subLogo}>IT CONSULTANT</span>
